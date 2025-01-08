@@ -1,9 +1,9 @@
-@{
-    Layout = "~/Views/Shared/_adminLayout.cshtml";
+ï»¿@{
+    Layout = "~/Views/Shared/_postManagerLayout.cshtml";
 }
 <div class="container mt-4">
-    <!-- Botón de nuevo post -->
-    <a href="/admin/new/post" class="btn btn-primary mb-3">New Post</a>
+    <!-- BotÃ³n de nuevo post -->
+    <a href="/PostManager/new/post" class="btn btn-primary mb-3">New Post</a>
 
     <!-- Tabla de posts -->
     <table class="table table-striped">
@@ -23,7 +23,7 @@
                     </td>
                     <td>@post.Title</td>
                     <td class="text-end">
-                        <a href="/admin/edit/@post.Title.Replace(' ','-')" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/PostManager/edit/@post.Title.Replace(' ','-')" class="btn btn-warning btn-sm">Edit</a>
                         <button class="btn btn-danger btn-sm delete" data-post="@post.Title.Replace(' ', '-')">Delete</button>
                     </td>
                 </tr>
@@ -39,7 +39,7 @@
             var postTitle = deleteButton.getAttribute("data-post");
             console.log("Delete button clicked for: " + postTitle);
 
-            fetch('/admin/post/delete', {
+            fetch('/PostManager/post/delete', {
                 method: 'DELETE',
                 body: JSON.stringify(postTitle),
                 headers: new Headers({
@@ -48,7 +48,7 @@
             }).then((response) => {
                 if (response.ok) {
                     console.log("Post deleted successfully");
-                    // Aquí puedes eliminar el post visualmente
+                    // AquÃ­ puedes eliminar el post visualmente
                 } else {
                     console.log("Failed to delete post");
                 }

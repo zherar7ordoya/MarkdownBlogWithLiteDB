@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Part_one</RootNamespace>
+    <RootNamespace>Blog</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
